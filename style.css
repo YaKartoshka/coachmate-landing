@@ -12692,6 +12692,10 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
     .mobile-menu-w {
         display: block
     }
+
+    .testimonials-slider-w .slide div {
+        font-size: 13px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
