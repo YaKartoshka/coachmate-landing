@@ -19,9 +19,54 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <style>
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                right: -100px;
+                opacity: 0;
+            }
+
+            to {
+                right: 25px;
+                opacity: 1;
+            }
+        }
+
+        .whatsapp-button:hover {
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+        }
+
+        .intro-text .required-text {
+            background-image: -webkit-gradient(linear, left top, right top, from(#047bf8), to(#0d1e73));
+            background-image: linear-gradient(to right, #047bf8, #0d1e73);
+            color: rgba(255,255,255,0.75);
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="social-contacts">
+        <a href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?!&type=phone_number&app_absent=0"
+            class="whatsapp-button"><img src="images/whatsapp.png" width="25" height="25"></a>
+    </div>
     <div class="all-wrapper">
         <div class="fade1"></div>
         <div class="desktop-menu menu-top-w menu-activated-on-hover">
@@ -40,7 +85,7 @@
                 <ul class="small-menu">
                     <li><a href="#contacts"><i class="os-icon os-icon-email-forward"></i><span>Контакты</span></a></li>
                     <li><a class="highlight"
-                            href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте, пишу вам для получения более подробной информации о системе!&type=phone_number&app_absent=0">Попробуйте
+                            href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?!&type=phone_number&app_absent=0">Попробуйте
                             бесплатно</a>
                     </li>
                 </ul>
@@ -54,7 +99,7 @@
                         <li><a href="#sectionTestimonials">О нас</a></li>
                         <li><a href="#"><i class="os-icon os-icon-email-forward"></i><span>Контакты</span></a></li>
                         <li><a class="highlight"
-                                href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте, пишу вам для получения более подробной информации о системе!&type=phone_number&app_absent=0">Попробуйте
+                                href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?!&type=phone_number&app_absent=0">Попробуйте
                                 бесплатно</a>
                         </li>
                     </ul>
@@ -75,8 +120,11 @@
                         <h1 class="intro-heading">CRM-система для спортивных клубов</h1>
                         <div class="intro-text">Управляй клубом легко: мероприятия, аналитика, отчетность — всё под
                             контролем.</div>
+                        <div class="intro-text mt-3">
+                            <div class="required-text p-3">Платформа разработана с учетом потребностей спортивных клубов Казахстана</div>
+                        </div>
                         <div class="intro-buttons"><a class="btn btn-primary"
-                                href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте, пишу вам для получения более подробной информации о системе!&type=phone_number&app_absent=0"
+                                href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?!&type=phone_number&app_absent=0"
                                 target="_blank"><i class="os-icon os-icon-social-09"></i><span>Попробуйте
                                     бесплатно</span></a>
                         </div>
@@ -122,11 +170,21 @@
             <div class="container d-flex align-items-center mt-5 mb-5" data-aos="fade-right"
                 style="gap: 50px; flex-wrap: wrap;">
                 <div class="content" style="width: 350px; margin: 10px auto;">
-                    <h4>Управление расписанием</h4>
-                    <p>Функция "Управление расписанием" в CRM системе для спортивных клубов позволяет создавать и
-                        редактировать расписания тренировок и мероприятий. Вы можете настраивать индивидуальные и
-                        групповые занятия, добавлять тренеров и клиентов, а также отслеживать посещаемость и оплаты,
-                        интегрируя данные с подписками и историей клиентов.</p>
+                    <h4><strong>Управление расписанием</strong></h4>
+                    <p><strong>Функция для эффективного создания и редактирования расписаний тренировок и
+                            мероприятий:</strong></p>
+                    <ul>
+                        <li><strong>Создание и редактирование расписаний</strong> для индивидуальных и групповых занятий
+                        </li>
+                        <li><strong>Добавление тренеров и клиентов</strong> в расписание</li>
+                        <li><strong>Отслеживание посещаемости и оплат</strong>, интегрируя данные с подписками и
+                            историей клиентов</li>
+                        <li><strong>Фильтры и сортировка</strong> расписания по типам занятий и дате для
+                            удобства поиска</li>
+                    </ul>
+                    <div class="cta-btn"><a class="btn btn-primary btn-lg btn-rounded"
+                            href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
+                            target="_blank"><span>Попробовать бесплатно</span></a></div>
                 </div>
                 <img src="images/intro2.png" alt="" width="600">
             </div>
@@ -134,21 +192,34 @@
                 style="gap: 50px; flex-wrap: wrap;">
                 <img src="images/clients_page.png" alt="" width="600">
                 <div class="content" style="width: 350px; margin: 10px auto;">
-                    <h4>База клиентов</h4>
-                    <p>База клиентов в CRM системе для спортивных клубов предназначена для хранения и управления
-                        информацией о клиентах клуба. Она включает данные о каждом клиенте, такие как контактная
-                        информация, история посещений, текущие подписки, платежи и предпочтения.</p>
+                    <h4><strong>База клиентов</strong></h4>
+                    <p><strong>Удобное хранение и управление информацией о клиентах для спортивных клубов:</strong></p>
+                    <ul>
+                        <li><strong>Контактная информация</strong> клиентов</li>
+                        <li><strong>История посещений</strong> и активность</li>
+                        <li><strong>Текущие подписки</strong> и платежи</li>
+                        <li><strong>Статус</strong> клиента</li>
+                    </ul>
+                    <div class="cta-btn"><a class="btn btn-primary btn-lg btn-rounded"
+                            href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
+                            target="_blank"><span>Попробовать бесплатно</span></a></div>
                 </div>
-
             </div>
             <div class="container d-flex align-items-center mt-5 mb-5" data-aos="fade-right"
                 style="gap: 50px; flex-wrap: wrap;">
                 <div class="content" style="width: 350px; margin: 10px auto;">
-                    <h4>Формирование и управление группами</h4>
-                    <p>Она обеспечивает удобное управление составом групп, расписанием занятий, добавлением или
-                        удалением участников, а также отслеживание посещаемости и прогресса внутри каждой группы. Эта
-                        функция помогает эффективно организовать групповые занятия и улучшить координацию между
-                        клиентами и тренерами.</p>
+                    <h4><strong>Формирование и управление группами</strong></h4>
+                    <p><strong>Удобное управление составом групп, расписанием занятий, участниками и отслеживание
+                            активности внутри группы:</strong></p>
+                    <ul>
+                        <li><strong>Управление составом групп и расписанием</strong> занятий</li>
+                        <li><strong>Добавление и удаление участников</strong></li>
+                        <li><strong>Отслеживание посещаемости</strong> и прогресса</li>
+                        <li><strong>Эффективная координация</strong> между клиентами и тренерами</li>
+                    </ul>
+                    <div class="cta-btn"><a class="btn btn-primary btn-lg btn-rounded"
+                            href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
+                            target="_blank"><span>Попробовать бесплатно</span></a></div>
                 </div>
                 <img src="images/groups_page.png" alt="" width="600">
             </div>
@@ -156,18 +227,34 @@
                 style="gap: 50px; flex-wrap: wrap;">
                 <img src="images/profile_page.png" alt="" width="600">
                 <div class="content" style="width: 350px; margin: 10px auto;">
-                    <h4>История посещении и платежей клиента</h4>
-                    <p>В CRM системе отображает полный журнал активности клиента, включая даты посещений тренировок,
-                        мероприятий, и информацию о произведенных платежах.</p>
+                    <h4><strong>История посещений и платежей клиента</strong></h4>
+                    <p><strong>Полный журнал активности клиента с датами посещений и информации о платежах.</strong></p>
+                    <ul>
+                        <li><strong>Просмотр посещений</strong> тренировок и мероприятий</li>
+                        <li><strong>Подробная информация</strong> о платежах и транзакциях</li>
+                        <li><strong>Отслеживание статуса</strong> платежей и посещений</li>
+                        <li><strong>Доступ к истории</strong> для анализа и отчетности</li>
+                    </ul>
+                    <div class="cta-btn"><a class="btn btn-primary btn-lg btn-rounded"
+                            href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
+                            target="_blank"><span>Попробовать бесплатно</span></a></div>
                 </div>
             </div>
             <div class="container d-flex align-items-center mt-5 mb-5" data-aos="fade-right"
                 style="gap: 50px; flex-wrap: wrap;">
                 <div class="content" style="width: 350px; margin: 10px auto;">
                     <h4>Подсчет заработной платы сотрудников</h4>
-                    <p>Подсчет заработной платы сотрудников в CRM системе автоматически рассчитывает зарплаты на основе
-                        заданных параметров, таких как количество проведенных тренировок, ставка за занятие, бонусы и
-                        удержания.</p>
+                    <p><strong>Удобный инструмент для автоматического расчета заработной платы</strong> на основе
+                        различных факторов.</p>
+                    <ul>
+                        <li><strong>Автоматический расчет</strong> на основе тренировок и ставки</li>
+                        <li><strong>Учет бонусов и удержаний</strong></li>
+                        <li><strong>Индивидуальные настройки для сотрудников</strong></li>
+                        <li><strong>Гибкость в расчете вознаграждений</strong></li>
+                    </ul>
+                    <div class="cta-btn"><a class="btn btn-primary btn-lg btn-rounded"
+                            href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
+                            target="_blank"><span>Попробовать бесплатно</span></a></div>
                 </div>
                 <img src="images/salary.png" alt="" width="600">
             </div>
@@ -194,17 +281,18 @@
                 <img src="images/client_profile_card.png" alt="" width="600">
                 <div class="content" style="width: 350px; margin: 10px auto;">
                     <h4>Карточка клиента</h4>
-                    <p>Удобный инструмент для управления данными клиентов.
-                        Преимущества:
+                    <p><strong>Удобный инструмент</strong> для управления данными клиентов. Преимущества: </p>
                     <ul>
-                        <li>Хранение личной информации и контактных данных</li>
-                        <li>Отслеживание статуса (активный, заморожен, архив)</li>
-                        <li>Настройка скидок и льгот (DamuBala & ArtSport)</li>
-                        <li>Управление группами и участием в них</li>
-                        <li>Интеграция с уведомлениями и напоминаниями</li>
-                        <li>Простота редактирования и анализа</li>
+                        <li><strong>Хранение личной информации</strong> и контактных данных</li>
+                        <li><strong>Отслеживание статуса</strong> (активный, заморожен, архив)</li>
+                        <li><strong>Настройка скидок и льгот</strong> (DamuBala & ArtSport)</li>
+                        <li><strong>Управление группами</strong> и участием в них</li>
+                        <li><strong>Интеграция с уведомлениями</strong> и напоминаниями</li>
+                        <li><strong>Простота редактирования</strong> и анализа</li>
                     </ul>
-                    </p>
+                    <div class="cta-btn"><a class="btn btn-primary btn-lg btn-rounded"
+                            href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
+                            target="_blank"><span>Попробовать бесплатно</span></a></div>
                 </div>
             </div>
 
@@ -336,7 +424,8 @@
                             <li>До 15 пользователей</li>
                             <li>Полная настройка проекта с нашей стороны и обучение сотрудников</li>
                             <li>Воронка продаж</li>
-                            <li>Поддержка с использованием AI чат-бота, интегрированного в Instagram, WhatsApp и Telegram для автоматизации общения с клиентами, обработки запросов</li>
+                            <li>Поддержка с использованием AI чат-бота, интегрированного в Instagram, WhatsApp и
+                                Telegram для автоматизации общения с клиентами, обработки запросов</li>
                             <li>Создание форм и опросов с разными типами вопросов и сбор ответов</li>
                         </ul>
                     </div>
@@ -354,7 +443,7 @@
             <div class="cta-desc">Оставьте заявку и мы свяжемся с вами для сотрудничества
             </div>
             <div class="cta-btn"><a class="btn btn-primary btn-lg btn-rounded"
-                    href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте, я заинтересован в получении более подробной информации о системе!&type=phone_number&app_absent=0"
+                    href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
                     target="_blank"><span>Попробовать</span><i class="os-icon os-icon-arrow-right4"></i><i
                         class="os-icon os-icon-arrow-right4"></i></a></div>
         </div>
@@ -379,7 +468,7 @@
                                     </ul>
                                 </div>
                                 <div class="col-lg-4 padded">
-                                    <h6 class="heading-small">Social Links</h6>
+                                    <h6 class="heading-small">Социальные сети</h6>
                                     <ul class="social-links">
                                         <li><a href="https://www.instagram.com/erasyl_sw/"><img
                                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png"
@@ -402,7 +491,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
         AOS.init();
-        
+
         const testimonialsSlider = new Splide("#testimonials-slider", {
             type: 'loop',
             speed: 2000,
