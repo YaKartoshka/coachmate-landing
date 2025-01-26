@@ -427,7 +427,7 @@
                                     <option value="200">До 200 клиентов</option>
                                     <option value="500">До 500 клиентов</option>
                                     <option value="1000">До 1000 клиентов</option>
-                                    <option value="1001">Более 1000 клиентов</option>
+                                    <!-- <option value="1500">Более 1000 клиентов</option> -->
                                 </select>
                             </div>
                             <div class="additional-services mt-4 d-flex flex-column align-items-center">
@@ -440,7 +440,7 @@
                                                 <i class="bi bi-instagram"></i>
                                             </div>
                                             <div>
-                                                <p>1000 ₸</p>
+                                                <p>2000 ₸</p>
                                             </div>
                                         </div>
                                         <div class="service-title">
@@ -454,7 +454,7 @@
                                                 <i class="bi bi-whatsapp"></i>
                                             </div>
                                             <div>
-                                                <p>2000 ₸</p>
+                                                <p>3000 ₸</p>
                                             </div>
                                         </div>
                                         <div class="service-title">
@@ -518,7 +518,7 @@
                             <div id="overall_cost"
                                 class="overall-cost mb-5 d-flex align-items-center justify-content-between w-100">
                                 <div>
-                                    <p style="font-size: 20px;">Итого за год</p>
+                                    <p style="font-size: 20px;" id="overall_cost_label">Итого за год</p>
                                 </div>
                                 <div>
                                     <p id="yearly_price" style="color: #047BF8; font-size: 20px;">60000₸</p>
@@ -594,13 +594,13 @@
                 100: 5000,
                 200: 10000,
                 500: 15000,
-                1000: 20000,
-                more: 25000,
+                1000: 25000,
+                // 1500: 22500,
             };
 
             const additionalServices = {
-                instagram: 1000,
-                whatsapp: 2000,
+                instagram: 2000,
+                whatsapp: 3000,
                 branch: 2000,
             };
 
@@ -628,11 +628,13 @@
                     $("#main_price").text(`${baseCostWithDicsount} ₸`); 
                     $("#month_price p:first-child").text(`${baseCostWithDicsount} ₸`); 
                     $("#overall_cost #yearly_price").text(`${totalYearlyCost.toFixed(0)} ₸`);
+                    $("#overall_cost_label").text('Итого за год');
 
                 } else {
                     $("#main_price").text(`${baseCost} ₸`);
                     $("#month_price p:first-child").text(`${baseCost} ₸`);
-                    $("#overall_cost #yearly_price").text(`${(totalMonthlyCost * 12).toFixed(0)} ₸`);
+                    $("#overall_cost #yearly_price").text(`${(totalMonthlyCost).toFixed(0)} ₸`);
+                    $("#overall_cost_label").text('Итого за месяц');
                 }
 
                 $("#client_price p:first-child").text(`${pricePerClient} ₸`);
@@ -645,20 +647,20 @@
                 let clientCount = 0;
                 let pricePerClientTemp = 0;
 
-                if (selectedOption === "До 100 клиентов") {
+                if (selectedOption == "До 100 клиентов") {
                     clientCount = 100;
                     pricePerClientTemp = 50;
-                } else if (selectedOption === "До 200 клиентов") {
+                } else if (selectedOption == "До 200 клиентов") {
                     clientCount = 200;
                     pricePerClientTemp = 50;
-                } else if (selectedOption === "До 500 клиентов") {
+                } else if (selectedOption == "До 500 клиентов") {
                     clientCount = 500;
                     pricePerClientTemp = 30;
-                } else if (selectedOption === "До 1000 клиентов") {
+                } else if (selectedOption == "До 1000 клиентов") {
                     clientCount = 1000;
-                    pricePerClientTemp = 20;
-                } else if (selectedOption === "Более 1000 клиентов") {
-                    clientCount = 1000;
+                    pricePerClientTemp = 25;
+                } else if (selectedOption == "Более 1000 клиентов") {
+                    clientCount = 1500;
                     pricePerClientTemp = 15;
                 }
 
