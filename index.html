@@ -19,6 +19,9 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 
     <style>
         .whatsapp-button {
@@ -123,7 +126,8 @@
                             контролем.</div>
                         <div class="intro-text mt-3">
                             <div class="required-text p-3">Платформа разработана с учетом потребностей спортивных клубов
-                                <b>Казахстана</b> </div>
+                                <b>Казахстана</b>
+                            </div>
                         </div>
                         <div class="intro-buttons"><a class="btn btn-primary"
                                 href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
@@ -174,7 +178,7 @@
                 <div class="content" style="width: 350px; margin: 10px auto;">
                     <h4><strong>Управление расписанием</strong></h4>
                     <p>Функция для эффективного создания и редактирования расписаний тренировок и
-                            мероприятий:</p>
+                        мероприятий:</p>
                     <ul>
                         <li><strong>Индивидуальные и групповые занятия</strong></li>
                         <li><strong>Отслеживание посещаемости и оплат</strong></li>
@@ -208,7 +212,7 @@
                 <div class="content" style="width: 350px; margin: 10px auto;">
                     <h4><strong>Формирование и управление группами</strong></h4>
                     <p>Удобное управление составом групп, расписанием занятий, участниками и отслеживание
-                            активности внутри группы:</p>
+                        активности внутри группы:</p>
                     <ul>
                         <li><strong>Управление составом групп</strong> </li>
                         <li><strong>Добавление и удаление участников</strong></li>
@@ -376,62 +380,159 @@
         </div>
 
         <div class="section-header-w" id="sectionFeatures">
-
             <div class="os-container" style="display: flex; justify-content: center;">
                 <div class="section-header">
-                    <h2 class="section-title" align="center">Тарифные планы</h2>
-                    <h5 class="section-sub-title">Выберите тот план что подходит под ваш клуб</h5>
+                    <h2 class="section-title" align="center">Тарифный план</h2>
+                    <h5 class="section-sub-title">Настройте свой тариф под ваш клуб</h5>
                 </div>
             </div>
         </div>
         <div class="features-table">
             <div class="os-container">
                 <div class="row no-gutters" style="gap: 50px; justify-content: center;">
-                    <div class="col-xl-4 col-sm-6 b-l b-t feature-cell" data-aos="fade-up">
-                        <div class="feature-icon">Стандарт</div>
-                        <h5 class="feature-title">9990 KZT</h5>
-                        <div class="feature-text">Проект содержит только необходимые инструменты для работы специально
-                            под спортивные клубы</div>
-                        <br>
-                        <ul>
-                            <li>До 200 клиентов</li>
-                            <li>До 10 пользователей</li>
-                            <li>База клиентов</li>
-                            <li>Запись пробных уроков</li>
-                            <li>Штат сотрудников и подсчет заработной платы</li>
-                            <li>Отчет по клиентам и оплатам</li>
-                            <li>WhatsApp напоминания об оплате по шаблону</li>
-                            <li>Расписание и проведение уроков</li>
-                            <li>Статистика по клубу (выручка, недавние продления, ожидаемые продления, должники)</li>
-                            <li>Формирование групп с клиентами</li>
-                            <li>Загрузка excel отчетов по месяцам</li>
-                        </ul>
+                    <div class="col-xl-7 col-sm-6 b-l b-t feature-cell" data-aos="fade-up">
+                        <h4 class="text-center mb-5">Настройка тарифа</h4>
+                        <div class="d-flex flex-column align-items-center p-4 mb-3"
+                            style="background-color: #E8EFFF; border-radius: 12px;">
+                            <div>
+                                <p style="color: #8792A8;">*Активные клиенты - это клиенты, которые посещали занятия за
+                                    последние 30 дней*</p>
+                            </div>
+                            <div class="calculations-result d-flex align-items-center">
+                                <div class="clients d-flex flex-column align-items-center" id="clients">
+                                    <p style="font-size: 24px;">100</p>
+                                    <p>Активные клиенты</p>
+                                </div>
+                                <div>
+                                    <p style="color: #047BF8; font-size: 24px;">X</p>
+                                </div>
+                                <div class="client-price d-flex flex-column align-items-center" id="client_price">
+                                    <p style="font-size: 24px;">50 ₸</p>
+                                    <p>Цена за клиента</p>
+                                </div>
+                                <div>
+                                    <p style="color: #047BF8; font-size: 28px;">=</p>
+                                </div>
+                                <div class="month-price d-flex flex-column align-items-center" id="month_price">
+                                    <p style="color: #047BF8; font-size: 24px;">5000 ₸</p>
+                                    <p>Стоимость в месяц</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p style="color: #8792A8;">Выбрать количество активных клиентов</p>
+                            <div class="range-container">
+                                <select class="form-control" name="clients-amount-range" id="clients_amount">
+                                    <option value="100">До 100 клиентов</option>
+                                    <option value="200">До 200 клиентов</option>
+                                    <option value="500">До 500 клиентов</option>
+                                    <option value="1000">До 1000 клиентов</option>
+                                    <option value="1001">Более 1000 клиентов</option>
+                                </select>
+                            </div>
+                            <div class="additional-services mt-4 d-flex flex-column align-items-center">
+                                <h5 class="mb-4 text-center">Дополнительные опции</h5>
+                                <div class="d-flex" style="gap: 3rem;">
+                                    <div class="service instagram-integration col-xl-4 col-sm-6 b-l b-t feature-cell"
+                                        id="service-instagram">
+                                        <div class="service-price">
+                                            <div>
+                                                <i class="bi bi-instagram"></i>
+                                            </div>
+                                            <div>
+                                                <p>1000 ₸</p>
+                                            </div>
+                                        </div>
+                                        <div class="service-title">
+                                            <p>Instagram интеграция</p>
+                                        </div>
+                                    </div>
+                                    <div class="service whatsapp-integration col-xl-4 col-sm-6 b-l b-t feature-cell"
+                                        id="service-whatsapp">
+                                        <div class="service-price">
+                                            <div>
+                                                <i class="bi bi-whatsapp"></i>
+                                            </div>
+                                            <div>
+                                                <p>2000 ₸</p>
+                                            </div>
+                                        </div>
+                                        <div class="service-title">
+                                            <p>WhatsApp интеграция</p>
+                                        </div>
+                                    </div>
+                                    <div class="service branch-system col-xl-4 col-sm-6 b-l b-t feature-cell"
+                                        id="service-branch">
+                                        <div class="service-price">
+                                            <div>
+                                                <i class="bi bi-buildings"></i>
+                                            </div>
+                                            <div>
+                                                <p>2000 ₸</p>
+                                            </div>
+                                        </div>
+                                        <div class="service-title">
+                                            <p>Филиальная система</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-xl-4 col-sm-6 b-r b-l b-t feature-cell" data-aos="fade-up">
-                        <div class="feature-icon">Премиум</div>
-                        <h5 class="feature-title">14990 KZT</h5>
-                        <div class="feature-text">Проект содержит все инструменты Стандарт, но также имеет ряд
-                            преимуществ:</div>
-                        <br>
-                        <ul>
-                            <li>От 200 до 500 клиентов</li>
-                            <li>До 15 пользователей</li>
-                            <li>Полная настройка проекта с нашей стороны и обучение сотрудников</li>
-                            <li>Воронка продаж</li>
-                            <li>Поддержка с использованием AI чат-бота, интегрированного в Instagram, WhatsApp и
-                                Telegram для автоматизации общения с клиентами, обработки запросов</li>
-                            <li>Создание форм и опросов с разными типами вопросов и сбор ответов</li>
-                        </ul>
-                    </div>
-                    <div class="col-xl-4 col-sm-6 b-r b-l b-t feature-cell" data-aos="fade-up">
-                        <div class="feature-icon">Персональный</div>
-                        <h5 class="feature-title">Договорная</h5>
-                        <div class="feature-text">Мы поможем вам настроить проект под вас и научим сотрудников
-                            пользоваться веб приложением.</div>
+                        <h4>Стоимость</h4>
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="switch-block mt-3 mb-4 d-flex justify-content-around align-items-center w-100">
+                                <div class="monthly active pt-3">
+                                    <p>Месяц</p>
+                                </div>
+                                <div class="yearly d-flex align-items-center">
+                                    <p style="padding-top: 15px;">Год</p>
+                                    <span class="discount">-20%</span>
+                                </div>
+                            </div>
+                            <div id="main-cost"
+                                class="main-cost mb-2 d-flex align-items-center justify-content-between w-100">
+                                <div id="main_clients" class="clients d-flex flex-column align-items-start">
+                                    <p id="client-count" style="font-size: 20px;">100</p>
+                                    <p style="color: #8792A8;">Активных клиентов</p>
+                                </div>
+                                <div class="cost">
+                                    <p id="main_price" style="color: #047BF8; font-size: 20px;">5000 ₸</p>
+                                    <p style="color: #8792A8;">В месяц</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p style="color: #047BF8; font-size: 35px;">+</p>
+                            </div>
+                            <div id="additional_cost"
+                                class="additional-services-cost mb-4 d-flex align-items-center justify-content-between w-100">
+                                <div>
+                                    <p>Дополнительные опции</p>
+                                </div>
+                                <div>
+                                    <p style="color: #047BF8; font-size: 20px;">0 ₸</p>
+                                    <p style="color: #8792A8;">В месяц</p>
+                                </div>
+                            </div>
+                            <div id="overall_cost"
+                                class="overall-cost mb-5 d-flex align-items-center justify-content-between w-100">
+                                <div>
+                                    <p style="font-size: 20px;">Итого за год</p>
+                                </div>
+                                <div>
+                                    <p id="yearly_price" style="color: #047BF8; font-size: 20px;">60000₸</p>
+                                </div>
+                            </div>
+                            <div><a class="btn btn-primary btn-lg btn-rounded"
+                                    href="https://api.whatsapp.com/send/?phone=7779537464&text=Здравствуйте! Я заинтересован в бесплатном пробном периоде вашей системы. Могли бы вы рассказать подробнее, как я могу начать?&type=phone_number&app_absent=0"
+                                    target="_blank"><span>Попробовать бесплатно</span></a></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="call-to-action">
             <h3 class="cta-header">Хотите попробовать?</h3>
             <div class="cta-desc">Оставьте заявку и мы свяжемся с вами для сотрудничества
@@ -474,7 +575,7 @@
                     </div>
                 </div>
                 <div class="deep-footer">
-                    <a href="#">Privacy Policy</a>. © 2024 coachmate.kz All rights reserved.
+                    <a href="#">Privacy Policy</a>. © 2025 coachmate.kz All rights reserved.
                 </div>
             </div>
         </div>
@@ -485,6 +586,111 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
         AOS.init();
+
+        $(document).ready(function () {
+            let isYearly = false;
+
+            const prices = {
+                100: 5000,
+                200: 10000,
+                500: 15000,
+                1000: 20000,
+                more: 25000,
+            };
+
+            const additionalServices = {
+                instagram: 1000,
+                whatsapp: 2000,
+                branch: 2000,
+            };
+
+            let currentClients = 100;
+            let pricePerClient = 50;
+            let selectedServices = [];
+
+            function updateTotalCost() {
+                let baseCost = prices[currentClients];
+                let baseCostWithDicsount = prices[currentClients] - prices[currentClients] * 0.2
+                let additionalCost = selectedServices.reduce(
+                    (total, service) => total + additionalServices[service],
+                    0
+                );
+
+                let totalMonthlyCost = baseCost + additionalCost;
+
+                if (isYearly) {
+                    let yearlyBaseCost = baseCost * 12;
+                    let yearlyAdditionalCost = additionalCost * 12;
+
+                    let discount = yearlyBaseCost * 0.2;
+                    let totalYearlyCost = (yearlyBaseCost - discount) + yearlyAdditionalCost;
+
+                    $("#main_price").text(`${baseCostWithDicsount} ₸`); 
+                    $("#month_price p:first-child").text(`${baseCostWithDicsount} ₸`); 
+                    $("#overall_cost #yearly_price").text(`${totalYearlyCost.toFixed(0)} ₸`);
+
+                } else {
+                    $("#main_price").text(`${baseCost} ₸`);
+                    $("#month_price p:first-child").text(`${baseCost} ₸`);
+                    $("#overall_cost #yearly_price").text(`${(totalMonthlyCost * 12).toFixed(0)} ₸`);
+                }
+
+                $("#client_price p:first-child").text(`${pricePerClient} ₸`);
+                $("#additional_cost div:last-child p:first-child").text(`${additionalCost} ₸`);
+                $("#main_clients p:first-child").text(currentClients);
+            }
+
+            $("#clients_amount").on("change", function () {
+                const selectedOption = $(this).find("option:selected").text();
+                let clientCount = 0;
+                let pricePerClientTemp = 0;
+
+                if (selectedOption === "До 100 клиентов") {
+                    clientCount = 100;
+                    pricePerClientTemp = 50;
+                } else if (selectedOption === "До 200 клиентов") {
+                    clientCount = 200;
+                    pricePerClientTemp = 50;
+                } else if (selectedOption === "До 500 клиентов") {
+                    clientCount = 500;
+                    pricePerClientTemp = 30;
+                } else if (selectedOption === "До 1000 клиентов") {
+                    clientCount = 1000;
+                    pricePerClientTemp = 20;
+                } else if (selectedOption === "Более 1000 клиентов") {
+                    clientCount = 1000;
+                    pricePerClientTemp = 15;
+                }
+
+                currentClients = clientCount;
+                pricePerClient = pricePerClientTemp;
+                $("#clients p:first-child").text(currentClients);
+                $("#client_price p:first-child").text(`${pricePerClient} ₸`);
+                updateTotalCost();
+            });
+
+            $(".service").on("click", function () {
+                const serviceKey = $(this).attr("id").split("-")[1];
+                if ($(this).hasClass("active")) {
+                    $(this).removeClass("active");
+                    selectedServices = selectedServices.filter((s) => s !== serviceKey);
+                } else {
+                    $(this).addClass("active");
+                    selectedServices.push(serviceKey);
+                }
+
+                updateTotalCost();
+            });
+
+            $(".switch-block div").on("click", function () {
+                $(".switch-block div").removeClass("active");
+                $(this).addClass("active");
+                isYearly = $(this).hasClass("yearly");
+                updateTotalCost();
+            });
+
+            updateTotalCost();
+        });
 
         const testimonialsSlider = new Splide("#testimonials-slider", {
             type: 'loop',
@@ -499,7 +705,6 @@
             pauseOnHover: true,
         });
         testimonialsSlider.mount();
-
     </script>
 </body>
 
