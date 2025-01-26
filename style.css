@@ -12729,8 +12729,9 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
         font-size: 2.53rem
     }
 
-    .features-table .feature-cell {
-        padding: 50px 40px
+    #price_settings, #total_amount {
+        max-width: 100%;
+        flex: 1;
     }
 
     .call-to-action .cta-header {
@@ -12824,6 +12825,15 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 }
 
 @media (max-width: 768px) {
+    #price_settings, #total_amount {
+        padding: 10px;
+    }
+
+    .calculations-result{
+        flex-direction: column;
+        gap: 0rem !important;
+    }
+
     .intro-w.layout-v1 .intro-i {
         -webkit-box-orient:vertical;
         -webkit-box-direction: reverse;
